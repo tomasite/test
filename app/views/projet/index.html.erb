@@ -1,0 +1,18 @@
+
+<% if user_signed_in? %>
+
+	<h1>Liste de mes projets</h1>
+	
+	<% if @projets.empty? %>
+		<h2>Vous n'avez pas de projet</h2>
+	<% else %>
+		<ul>
+		<% @projets.each do |p| %>
+		  <li><%= p.nom %></li>
+		<% end %>
+		</ul>
+	<% end %>
+	
+<% else %>
+	<h1>Vous devez être connecté !</h1>
+<% end %>
